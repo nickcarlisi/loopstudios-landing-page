@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+/* Sometimes helpful, just in case */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Josefin Sans";
+  font-weight: 300;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  min-height: 500px;
+}
+
+a {
+  font-family: "Alata", sans-serif;
+  color: white;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 80%;
+  }
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+  margin-bottom: 3em;
+}
+@media only screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+.grid .tile {
+  width: 100%;
+  position: relative;
+}
+.grid .tile .overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.grid .tile img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.grid .tile .creation-name {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  z-index: 3;
+}
+
+section.hero {
+  height: 100vh;
+  min-height: 500px;
+  position: relative;
+}
+section.hero .header {
+  position: absolute;
+  color: white;
+  width: 100%;
+  z-index: 2;
+}
+section.hero .header .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1400px;
+  margin-inline: auto;
+  padding: 2em 0;
+  font-weight: 400;
+}
+@media only screen and (min-width: 992px) {
+  section.hero .header .nav {
+    width: 80%;
+  }
+}
+section.hero .header .header-logo {
+  width: 125px;
+}
+@media only screen and (min-width: 992px) {
+  section.hero .header .header-logo {
+    width: 300px;
+  }
+}
+section.hero .header .nav-list ul {
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  section.hero .header .nav-list ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+}
+section.hero .header .hamburger {
+  cursor: pointer;
+}
+@media only screen and (min-width: 992px) {
+  section.hero .header .hamburger {
+    display: none;
+  }
+}
+section.hero .hero-img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.hero .hero-text {
+  position: absolute;
+  height: 100%;
+  width: 90%;
+  max-width: 1400px;
+  margin-inline: auto;
+  inset: 0;
+  display: grid;
+  align-items: center;
+}
+@media only screen and (min-width: 992px) {
+  section.hero .hero-text {
+    width: 80%;
+  }
+}
+section.hero .hero-text h1 {
+  color: white;
+  text-transform: uppercase;
+  border: 3px solid white;
+  padding: 1em;
+  font-size: 10vw;
+  font-weight: 300;
+  width: 100%;
+  margin-inline: auto;
+}
+@media only screen and (min-width: 992px) {
+  section.hero .hero-text h1 {
+    font-size: 5rem;
+    margin-inline: initial;
+    max-width: 750px;
+  }
+}
+
+section.interactive {
+  padding: 6em 0;
+  margin-inline: auto;
+}
+@media only screen and (min-width: 992px) {
+  section.interactive {
+    padding: 12em 0;
+  }
+}
+
+.section-header {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1em 0;
+}
+@media only screen and (min-width: 992px) {
+  .section-header {
+    text-align: left;
+    font-size: 3.5rem;
+    padding: 0;
+  }
+}
+
+.section-para {
+  line-height: 1.75em;
+  text-align: center;
+  color: hsl(0deg, 0%, 55%);
+  font-family: "Alata", sans-serif;
+}
+@media only screen and (min-width: 992px) {
+  .section-para {
+    text-align: left;
+  }
+}
+
+.see-all-btn {
+  background-color: white;
+  border: 1px solid black;
+  text-transform: uppercase;
+  padding: 1em 3em;
+  display: block;
+  margin-inline: auto;
+  letter-spacing: 5px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  font-family: "Alata", sans-serif;
+}
+@media only screen and (min-width: 992px) {
+  .see-all-btn {
+    margin-inline: 0;
+    padding: 1em 4em;
+  }
+}
+.see-all-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+section.creations {
+  padding-bottom: 7em;
+}
+
+@media only screen and (min-width: 992px) {
+  .mobile-see-all-btn {
+    display: none;
+  }
+}
+
+.desktop-see-all-btn {
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .desktop-see-all-btn {
+    display: inline-block;
+  }
+}
+
+.creations-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@media only screen and (min-width: 992px) {
+  .creations-header {
+    justify-content: space-between;
+    margin-bottom: 6em;
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 4em 0;
+}
+footer .main-footer-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+@media only screen and (min-width: 992px) {
+  footer .main-footer-flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+footer .main-footer-flex .main-flex-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+footer .main-footer-flex .main-flex-child .footer-logo {
+  width: 125px;
+  margin-bottom: 1em;
+  margin-inline: auto;
+}
+@media only screen and (min-width: 992px) {
+  footer .main-footer-flex .main-flex-child .footer-logo {
+    margin: 0;
+  }
+}
+footer .main-footer-flex .main-flex-child .footer-nav-ul-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+}
+@media only screen and (min-width: 992px) {
+  footer .main-footer-flex .main-flex-child .footer-nav-ul-flex {
+    flex-direction: row;
+  }
+}
+footer .main-footer-flex .main-flex-child .footer-socials-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+}
+@media only screen and (min-width: 992px) {
+  footer .main-footer-flex .main-flex-child .footer-socials-flex {
+    justify-content: flex-end;
+  }
+}
+footer .copyright {
+  text-align: center;
+  color: hsl(0deg, 0%, 55%);
+  font-family: "Alata", sans-serif;
+}
+
+@media only screen and (min-width: 992px) {
+  .interactive-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+  }
+}
+
+.interactive-img-container,
+.interactive-copy-container {
+  grid-row: 1/2;
+}
+
+.interactive-img-container {
+  grid-column: 1/5;
+}
+.interactive-img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.interactive-copy-container {
+  grid-column: 4/-1;
+  align-self: flex-end;
+  background-color: white;
+}
+@media only screen and (min-width: 992px) {
+  .interactive-copy-container {
+    padding-top: 6em;
+    padding-left: 6em;
+  }
+}
+.interactive-copy-container .section-header {
+  padding-bottom: 1em;
+}
+
+.tile {
+  position: relative;
+}/*# sourceMappingURL=styles.css.map */
