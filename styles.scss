@@ -2,13 +2,13 @@
 
 // font-family: 'Josefin Sans', sans-serif;
 // font-family: 'Alata', sans-serif;
+
 // mixins
 
 $color-white: #ffffff;
 $color-black: #000000;
 $color-dark-gray: hsl(0, 0%, 55%);
 $color-very-dark-gray: hsl(0, 0%, 41%);
-// $btn-color: #2596be;
 
 @mixin small {
   @media only screen and (min-width: 500px) {
@@ -30,6 +30,12 @@ $color-very-dark-gray: hsl(0, 0%, 41%);
 
 @mixin desktopl {
   @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin desktopxl {
+  @media only screen and (min-width: 1400px) {
     @content;
   }
 }
@@ -58,9 +64,7 @@ html {
 }
 
 body {
-  // background-color: $color-off-white;
   position: relative;
-  // color: $color-off-black;
 }
 
 img {
@@ -74,64 +78,15 @@ section {
 a {
   font-family: "Alata", sans-serif;
   color: white;
-  // font-size: 1rem;
 }
 
 .container {
   width: 90%;
   max-width: 1400px;
   margin-inline: auto;
-  // border: 1px solid red;
 
   @include desktop {
     width: 80%;
-  }
-}
-
-.grid {
-  width: 100%;
-  // border: 1px solid red;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2em;
-  margin-bottom: 3em;
-
-  @include tablet {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @include desktop {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  .tile {
-    width: 100%;
-    // border: 1px solid blue;
-    position: relative;
-
-    .overlay {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      inset: 0;
-      background-color: rgba($color: #000000, $alpha: 0.75);
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .creation-name {
-      position: absolute;
-      bottom: 10%;
-      left: 5%;
-      color: white;
-      text-transform: uppercase;
-      font-size: 1.5rem;
-      z-index: 3;
-    }
   }
 }
 
@@ -143,7 +98,6 @@ section.hero {
   .header {
     position: absolute;
     color: white;
-    // border: 1px solid white;
     width: 100%;
     z-index: 2;
 
@@ -154,7 +108,6 @@ section.hero {
       align-items: center;
       width: 90%;
       max-width: 1400px;
-      // border: 1px solid red;
       margin-inline: auto;
       padding: 2em 0;
 
@@ -207,7 +160,6 @@ section.hero {
     inset: 0;
     display: grid;
     align-items: center;
-    // border: 1px solid white;
 
     @include desktop {
       width: 80%;
@@ -226,7 +178,6 @@ section.hero {
       @include desktop {
         font-size: 5rem;
         margin-inline: initial;
-        // margin-left: 10%;
         max-width: 750px;
       }
     }
@@ -242,6 +193,45 @@ section.interactive {
   }
 }
 
+.interactive-grid {
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    width: 100%;
+  }
+}
+
+.interactive-img-container,
+.interactive-copy-container {
+  grid-row: 1 / 2;
+}
+
+.interactive-img-container {
+  grid-column: 1 / 5;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.interactive-copy-container {
+  grid-column: 4 / -1;
+  align-self: flex-end;
+  background-color: white;
+
+  @include desktop {
+    padding-top: 6em;
+    padding-left: 6em;
+  }
+
+  .section-header {
+    padding-bottom: 1em;
+  }
+}
+
 .section-header {
   font-size: 2rem;
   text-transform: uppercase;
@@ -250,15 +240,19 @@ section.interactive {
 
   @include desktop {
     text-align: left;
-    font-size: 3.5rem;
     padding: 0;
+  }
 
-    // padding-left: 2rem;
+  @include desktopl {
+    font-size: 2.75rem;
+  }
+
+  @include desktopxl {
+    font-size: 3.5rem;
   }
 }
 
 .section-para {
-  // font-size: 1rem;
   line-height: 1.75em;
   text-align: center;
   color: $color-dark-gray;
@@ -266,7 +260,6 @@ section.interactive {
 
   @include desktop {
     text-align: left;
-    // padding-left: 2rem;
   }
 }
 
@@ -297,6 +290,89 @@ section.creations {
   padding-bottom: 7em;
 }
 
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+  margin-bottom: 3em;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .tile {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+
+    .overlay {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      inset: 0;
+      transition: all 0.5s ease;
+      background: linear-gradient(
+        260deg,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 0, 0, 1) 100%
+      );
+
+      @include desktop {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 50%,
+          rgba(0, 0, 0, 1) 100%
+        );
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+
+    .creation-name {
+      position: absolute;
+      bottom: 10%;
+      left: 5%;
+      color: white;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      z-index: 3;
+      transition: all 0.5s ease;
+
+      @include desktop {
+        left: 10%;
+      }
+
+      @include desktopxl {
+        font-size: 2rem;
+      }
+    }
+
+    &:hover {
+      img {
+        opacity: 0.5;
+      }
+
+      .overlay {
+        display: none;
+      }
+
+      .creation-name {
+        color: #000000;
+      }
+    }
+  }
+}
+
 .mobile-see-all-btn {
   @include desktop {
     display: none;
@@ -312,13 +388,13 @@ section.creations {
 }
 
 .creations-header {
-  // border: 1px solid red;
   display: flex;
   flex-direction: row;
   justify-content: center;
 
   @include desktop {
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 6em;
   }
 }
@@ -334,7 +410,6 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 3em;
-    // border: 1px solid red;
 
     @include desktop {
       flex-direction: row;
@@ -371,6 +446,7 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: flex-end;
         gap: 1em;
 
         @include desktop {
@@ -387,56 +463,104 @@ footer {
   }
 }
 
-.interactive-grid {
-  @include desktop {
-    // border: 1px solid red;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-
-    width: 100%;
-    // height: 500px;
-  }
+.underline:after {
+  display: block;
+  content: "";
+  border-bottom: solid 2px white;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
 }
 
-// .interactive-grid > * {
-//   border: 1px solid blue;
-// }
-.interactive-img-container,
-.interactive-copy-container {
-  grid-row: 1 / 2;
+.underline:hover:after {
+  transform: scaleX(1);
 }
 
-.interactive-img-container {
-  grid-column: 1 / 5;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.interactive-copy-container {
-  grid-column: 4 / -1;
-  align-self: flex-end;
-  background-color: white;
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  z-index: 10;
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
 
   @include desktop {
-    padding-top: 6em;
-    padding-left: 6em;
+    display: none;
   }
 
-  .section-header {
-    padding-bottom: 1em;
+  &.open {
+    transform: translateY(0);
+  }
+
+  .header {
+    position: absolute;
+    color: white;
+    width: 100%;
+    z-index: 2;
+
+    .nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: 1400px;
+      margin-inline: auto;
+      padding: 2em 0;
+
+      font-weight: 400;
+
+      @include desktop {
+        width: 80%;
+      }
+    }
+
+    .header-logo {
+      width: 125px;
+
+      @include desktop {
+        width: 300px;
+      }
+    }
+
+    .nav-list ul {
+      display: none;
+
+      @include desktop {
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+      }
+    }
+
+    .icon-close {
+      cursor: pointer;
+
+      @include desktop {
+        display: none;
+      }
+    }
   }
 }
 
-.tile {
-  position: relative;
+.mobile-menu-nav-list {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  margin-inline: auto;
 
-  // img {
-  //   height: 100%;
-  //   width: 100%;
-  //   object-fit: cover;
-  // }
+  li {
+    display: block;
+  }
+
+  a {
+    font-size: 2rem;
+    font-family: "Josefin Sans", sans-serif;
+    display: block;
+    margin: 1em 0;
+    text-transform: uppercase;
+  }
 }

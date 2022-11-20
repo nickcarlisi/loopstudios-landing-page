@@ -14,14 +14,35 @@
     <link rel="stylesheet" href="styles.css" />
 
     <title>Loopstudios landing page</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <!-- <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style> -->
   </head>
   <body>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <header class="header">
+        <nav class="nav">
+          <div class="header-logo">
+            <a href="/">
+              <img class="logo-img" src="images/logo.svg" alt="" />
+            </a>
+          </div>
+
+          <div class="icon-close">
+            <img src="images/icon-close.svg" alt="" />
+          </div>
+        </nav>
+      </header>
+
+      <div class="mobile-menu-nav-list">
+        <ul>
+          <li><a class="mobile-link" href="#about">About</a></li>
+          <li><a class="mobile-link" href="javascript:;">Careers</a></li>
+          <li><a class="mobile-link" href="javascript:;">Events</a></li>
+          <li><a class="mobile-link" href="#products">Products</a></li>
+          <li><a class="mobile-link" href="javascript:;">Support</a></li>
+        </ul>
+      </div>
+    </div>
+
     <main>
       <section class="hero">
         <!-- Header -->
@@ -34,11 +55,11 @@
             </div>
             <div class="nav-list">
               <ul>
-                <li><a href="javascript:;">About</a></li>
-                <li><a href="javascript:;">Careers</a></li>
-                <li><a href="javascript:;">Events</a></li>
-                <li><a href="javascript:;">Products</a></li>
-                <li><a href="javascript:;">Support</a></li>
+                <li class="underline"><a href="#about">About</a></li>
+                <li class="underline"><a href="javascript:;">Careers</a></li>
+                <li class="underline"><a href="javascript:;">Events</a></li>
+                <li class="underline"><a href="#products">Products</a></li>
+                <li class="underline"><a href="javascript:;">Support</a></li>
               </ul>
             </div>
             <div class="hamburger">
@@ -69,7 +90,7 @@
       </section>
 
       <!-- Interactive Section -->
-      <section class="interactive">
+      <section id="about" class="interactive">
         <div class="container">
           <div class="interactive-grid">
             <div class="interactive-img-container">
@@ -99,7 +120,7 @@
       </section>
 
       <!-- Creations Section -->
-      <section class="creations">
+      <section id="products" class="creations">
         <div class="container">
           <div class="creations-header">
             <h2 class="section-header">Our creations</h2>
@@ -135,6 +156,7 @@
                   srcset="images/desktop/image-night-arcade.jpg"
                 />
                 <img src="images/desktop/image-night-arcade.jpg" alt="" />
+                <div class="overlay"></div>
               </picture>
               <h3 class="creation-name">Night<br />arcade</h3>
             </div>
@@ -149,6 +171,7 @@
                   srcset="images/desktop/image-soccer-team.jpg"
                 />
                 <img src="images/desktop/image-soccer-team.jpg" alt="" />
+                <div class="overlay"></div>
               </picture>
               <h3 class="creation-name">Soccer<br />team VR</h3>
             </div>
@@ -163,6 +186,7 @@
                   srcset="images/desktop/image-grid.jpg"
                 />
                 <img src="images/desktop/image-grid.jpg" alt="" />
+                <div class="overlay"></div>
               </picture>
               <h3 class="creation-name">The<br />grid</h3>
             </div>
@@ -177,6 +201,7 @@
                   srcset="images/desktop/image-from-above.jpg"
                 />
                 <img src="images/desktop/image-from-above.jpg" alt="" />
+                <div class="overlay"></div>
               </picture>
               <h3 class="creation-name">From up<br />above VR</h3>
             </div>
@@ -191,6 +216,7 @@
                   srcset="images/desktop/image-pocket-borealis.jpg"
                 />
                 <img src="images/desktop/image-pocket-borealis.jpg" alt="" />
+                <div class="overlay"></div>
               </picture>
               <h3 class="creation-name">Pocket<br />borealis</h3>
             </div>
@@ -205,6 +231,7 @@
                   srcset="images/desktop/image-curiosity.jpg"
                 />
                 <img src="images/desktop/image-curiosity.jpg" alt="" />
+                <div class="overlay"></div>
               </picture>
               <h3 class="creation-name">The<br />curiosity</h3>
             </div>
@@ -219,6 +246,7 @@
                   srcset="images/desktop/image-fisheye.jpg"
                 />
                 <img src="images/desktop/image-fisheye.jpg" alt="" />
+                <div class="overlay"></div>
               </picture>
               <h3 class="creation-name">Make it<br />fisheye</h3>
             </div>
@@ -233,37 +261,39 @@
           <div class="main-footer-flex">
             <div class="main-flex-child">
               <div class="footer-logo">
-                <img src="images/logo.svg" alt="" />
+                <a href="/">
+                  <img src="images/logo.svg" alt="" />
+                </a>
               </div>
               <nav>
                 <ul class="footer-nav-ul-flex">
-                  <li><a href="javascript:;">About</a></li>
-                  <li><a href="javascript:;">Careers</a></li>
-                  <li><a href="javascript:;">Events</a></li>
-                  <li><a href="javascript:;">Products</a></li>
-                  <li><a href="javascript:;">Support</a></li>
+                  <li class="underline"><a href="#about">About</a></li>
+                  <li class="underline"><a href="javascript:;">Careers</a></li>
+                  <li class="underline"><a href="javascript:;">Events</a></li>
+                  <li class="underline"><a href="#products">Products</a></li>
+                  <li class="underline"><a href="javascript:;">Support</a></li>
                 </ul>
               </nav>
             </div>
             <div class="main-flex-child">
               <div class="socials">
                 <ul class="footer-socials-flex">
-                  <li>
+                  <li class="underline">
                     <a href="javascript:;"
                       ><img src="images/icon-facebook.svg" alt=""
                     /></a>
                   </li>
-                  <li>
+                  <li class="underline">
                     <a href="javascript:;"
                       ><img src="images/icon-twitter.svg" alt=""
                     /></a>
                   </li>
-                  <li>
+                  <li class="underline">
                     <a href="javascript:;"
                       ><img src="images/icon-pinterest.svg" alt=""
                     /></a>
                   </li>
-                  <li>
+                  <li class="underline">
                     <a href="javascript:;"
                       ><img src="images/icon-instagram.svg" alt=""
                     /></a>
@@ -279,11 +309,29 @@
       </footer>
     </main>
 
-    <!-- <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div> -->
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const iconClose = document.querySelector(".icon-close");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      hamburger.addEventListener("click", () => {
+        console.log("You clicked the hamburger");
+        mobileMenu.classList.add("open");
+      });
+
+      iconClose.addEventListener("click", () => {
+        console.log("You clicked the hamburger");
+        mobileMenu.classList.remove("open");
+      });
+
+      mobileLinks.forEach((link) => {
+        console.log(link);
+        link.addEventListener("click", () => {
+          console.log("You clicked the hamburger");
+          mobileMenu.classList.remove("open");
+        });
+      });
+    </script>
   </body>
 </html>
